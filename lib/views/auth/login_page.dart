@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:newafest/widgets/custom_banner.dart';
+import 'package:newafest/widgets/custom_button.dart';
+
+import '../../widgets/custom_divider.dart';
 
 class LoginPage extends StatelessWidget {
   final text1 = "Sign in";
@@ -15,7 +18,7 @@ class LoginPage extends StatelessWidget {
   );
 
   //initialising email textfield
-  Widget _email(){
+  Widget _email() {
     return TextField(
       style: const TextStyle(
         fontSize: 15,
@@ -74,22 +77,60 @@ class LoginPage extends StatelessWidget {
         //crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           CustomBanner(text1: text1, text2: text2),
-          Container(
-            //Textfield start
-            padding: const EdgeInsets.all(28),
-            child: Column(
-              children: [_email(), const SizedBox(height: 30), _password()],
-            ),
-          ),
-         const Row(
-            mainAxisAlignment:  MainAxisAlignment.end,
-            children:[  Text("Forgot Password?", style: TextStyle(
-              fontSize: 8,
-              fontWeight: FontWeight.w400,
-              fontFamily: "Poppins",
-              color: Colors.grey,
-            ),),
-          ])
+          Padding(
+              padding: const EdgeInsets.all(28),
+              child: Column(
+                children: [
+                  Container(
+                    //Textfield start
+                    padding: const EdgeInsets.all(0),
+                    child: Column(
+                      children: [
+                        _email(),
+                        const SizedBox(height: 25),
+                        _password()
+                      ],
+                    ),
+                  ),
+                  const Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: "Poppins",
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ]),
+                  const CustomButton(txt1: "Login"),
+                  const CustomDivider(divider1: "or login with"),
+                  Row(children: [
+                    OutlinedButton.icon(
+                        onPressed: () {},
+                        style: OutlinedButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            backgroundColor: const Color(0xff701714),
+                            shape: const RoundedRectangleBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(4)),
+                            ),
+                            minimumSize: const Size(double.infinity, 40)),
+                        icon: const Icon(Icons.facebook),
+                        label: const Text(
+                          "txt1",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ))
+                  ]),
+                ],
+              ))
         ],
       ),
     ));
