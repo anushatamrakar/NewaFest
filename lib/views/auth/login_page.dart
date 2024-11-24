@@ -3,6 +3,7 @@ import 'package:newafest/widgets/custom_banner.dart';
 import 'package:newafest/widgets/custom_button.dart';
 
 import '../../widgets/custom_divider.dart';
+import '../../widgets/custom_social_icon.dart';
 
 class LoginPage extends StatelessWidget {
   final text1 = "Sign in";
@@ -92,6 +93,7 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height:15),
                   const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -105,30 +107,19 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                       ]),
+                  const SizedBox(height:15),
                   const CustomButton(txt1: "Login"),
+                  const SizedBox(height:15),
                   const CustomDivider(divider1: "or login with"),
-                //   Row(children: [
-                //     OutlinedButton.icon(
-                //         onPressed: () {},
-                //         style: OutlinedButton.styleFrom(
-                //             foregroundColor: Colors.white,
-                //             backgroundColor: const Color(0xff701714),
-                //             shape: const RoundedRectangleBorder(
-                //               borderRadius:
-                //                   BorderRadius.all(Radius.circular(4)),
-                //             ),
-                //             minimumSize: const Size(double.infinity, 40)),
-                //         icon: const Icon(Icons.facebook),
-                //         label: const Text(
-                //           "txt1",
-                //           style: TextStyle(
-                //             color: Colors.white,
-                //             fontSize: 16,
-                //             fontFamily: "Poppins",
-                //             fontWeight: FontWeight.w600,
-                //           ),
-                //         ))
-                //   ]),
+                  const SizedBox(height:15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomOutlinedButton(icon: const Icon(Icons.facebook), text: 'Google',onPressed: (){}, textColor: Colors.black, ),
+                      const SizedBox(width:25),
+                      CustomOutlinedButton(icon: const Icon(Icons.facebook), text: 'Facebook',onPressed: (){}, textColor: Colors.black,)
+                    ],
+                  )
                  ],
               ))
         ],

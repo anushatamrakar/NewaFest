@@ -5,7 +5,6 @@ class CustomOutlinedButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color textColor;
-  final Color backgroundColor;
 
 
   const CustomOutlinedButton({
@@ -14,7 +13,6 @@ class CustomOutlinedButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.textColor = Colors.black,
-    this.backgroundColor = Colors.blue,
 
   });
 
@@ -33,7 +31,7 @@ class CustomOutlinedButton extends StatelessWidget {
         ),
       ),
       style: OutlinedButton.styleFrom(
-        foregroundColor: backgroundColor,
+        foregroundColor: textColor,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(5)),
         ),
