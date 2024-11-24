@@ -125,6 +125,7 @@ class UserRegistration extends StatelessWidget {
                   _password(),
               ],
             )),
+
             const CustomButton(txt1: "Register"),
           ],
         ),
