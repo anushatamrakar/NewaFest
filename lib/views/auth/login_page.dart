@@ -107,29 +107,29 @@ class LoginPage extends StatelessWidget {
                       ]),
                   const CustomButton(txt1: "Login"),
                   const CustomDivider(divider1: "or login with"),
-                  Row(children: [
-                    OutlinedButton.icon(
-                        onPressed: () {},
-                        style: OutlinedButton.styleFrom(
-                            foregroundColor: Colors.white,
-                            backgroundColor: const Color(0xff701714),
-                            shape: const RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(4)),
-                            ),
-                            minimumSize: const Size(double.infinity, 40)),
-                        icon: const Icon(Icons.facebook),
-                        label: const Text(
-                          "txt1",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontFamily: "Poppins",
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ))
-                  ]),
-                ],
+                //   Row(children: [
+                //     OutlinedButton.icon(
+                //         onPressed: () {},
+                //         style: OutlinedButton.styleFrom(
+                //             foregroundColor: Colors.white,
+                //             backgroundColor: const Color(0xff701714),
+                //             shape: const RoundedRectangleBorder(
+                //               borderRadius:
+                //                   BorderRadius.all(Radius.circular(4)),
+                //             ),
+                //             minimumSize: const Size(double.infinity, 40)),
+                //         icon: const Icon(Icons.facebook),
+                //         label: const Text(
+                //           "txt1",
+                //           style: TextStyle(
+                //             color: Colors.white,
+                //             fontSize: 16,
+                //             fontFamily: "Poppins",
+                //             fontWeight: FontWeight.w600,
+                //           ),
+                //         ))
+                //   ]),
+                 ],
               ))
         ],
       ),
