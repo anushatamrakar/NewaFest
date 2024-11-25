@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-class CustomDivider extends StatelessWidget {
+
+class CustomDivider extends StatefulWidget {
   final String divider1;
+
   const CustomDivider({super.key, required this.divider1});
 
   @override
+  State<CustomDivider> createState() => _CustomDividerState();
+}
+
+class _CustomDividerState extends State<CustomDivider> {
+  @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       children: [
         const Expanded(
           child: Divider(
@@ -15,7 +22,7 @@ class CustomDivider extends StatelessWidget {
           ),
         ),
         Text(
-          divider1,
+          widget.divider1,
           style: const TextStyle(
             color: Colors.grey, // Text color
             fontSize: 14, // Font size
