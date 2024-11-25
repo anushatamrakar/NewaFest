@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newafest/views/auth/login_page.dart';
 import 'package:newafest/views/auth/sharer_registration.dart';
 import 'package:newafest/views/auth/user_registration.dart';
+import 'package:newafest/views/pages/chefProfile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SharerRegistration(),
+      home: const ChefProfilePage(),
     );
   }
 }
