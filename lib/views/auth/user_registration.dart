@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:newafest/widgets/custom_banner.dart';
 import 'package:newafest/widgets/custom_button.dart';
+import 'package:newafest/widgets/custom_divider.dart';
+
+import '../../widgets/custom_social_icon.dart';
 class UserRegistration extends StatelessWidget {
   const UserRegistration({super.key});
   final border = const OutlineInputBorder(
@@ -125,8 +128,26 @@ class UserRegistration extends StatelessWidget {
                   _password(),
               ],
             )),
-
-            const CustomButton(txt1: "Register"),
+            const CustomDivider(divider1: "or Sign up with"),
+            const SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomOutlinedButton(icon: const Icon(Icons.facebook), text: 'Google',onPressed: (){}, textColor: Colors.black, ),
+                const SizedBox(width:25),
+                CustomOutlinedButton(icon: const Icon(Icons.facebook), text: 'Facebook',onPressed: (){}, textColor: Colors.blue,)
+              ],
+            ),
+            const SizedBox(height: 15),
+            const Padding(padding: EdgeInsets.only(right:28,left:28),
+            child: CustomButton(txt1: "Sign up"),
+            ),
+            const Text("Already have an account?Login", style: TextStyle(
+              fontSize: 12,
+              fontFamily: "Poppins",
+              fontWeight: FontWeight.w400,
+              color: Colors.grey,
+            ),)
           ],
         ),
       ),

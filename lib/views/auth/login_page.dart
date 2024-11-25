@@ -66,7 +66,6 @@ class LoginPage extends StatelessWidget {
       ),
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,7 +116,7 @@ class LoginPage extends StatelessWidget {
                     children: [
                       CustomOutlinedButton(icon: const Icon(Icons.facebook), text: 'Google',onPressed: (){}, textColor: Colors.black, ),
                       const SizedBox(width:25),
-                      CustomOutlinedButton(icon: const Icon(Icons.facebook), text: 'Facebook',onPressed: (){}, textColor: Colors.black,)
+                      CustomOutlinedButton(icon: const Icon(Icons.facebook), text: 'Facebook',onPressed: (){}, textColor: Colors.blue,)
                     ],
                   )
                  ],

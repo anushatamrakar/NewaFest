@@ -23,7 +23,7 @@ class CustomDivider extends StatelessWidget {
         ),
         const Expanded(
           child: Divider(
-            thickness: 1, // Line thickness
+            thickness: 1.5, // Line thickness
             color: Colors.grey, // Line color
             indent: 10, // Space between line and text
           ),
