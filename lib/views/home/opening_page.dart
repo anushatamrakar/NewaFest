@@ -1,14 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:newafest/widgets/custom_opening.dart';
+import 'dart:async';
 
-class OpeningPage extends StatelessWidget {
+import '../../widgets/custom_opening.dart';
+
+class OpeningPage extends StatefulWidget {
   const OpeningPage({super.key});
+
+  @override
+  State<OpeningPage> createState() => _OpeningPageState();
+}
+
+class _OpeningPageState extends State<OpeningPage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacementNamed(context, '/login');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff701714),
-      resizeToAvoidBottomInset: false,
+      backgroundColor: const Color(0xFF701714),
       body: SafeArea(
         child: Center(
           child: Container(
@@ -35,4 +49,3 @@ class OpeningPage extends StatelessWidget {
     );
   }
 }
-

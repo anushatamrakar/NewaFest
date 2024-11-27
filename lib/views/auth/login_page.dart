@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                         const SizedBox(height: 15),
-                        const CustomButton(txt1: "Login"),
+                        CustomButton(txt1: "Login", bg: const Color(0xff701714), textColor: Colors.white, onPressed: () {Navigator.pushNamed(context, "/add_recipe");},),
                         const SizedBox(height: 15),
                         const CustomDivider(divider1: "or login with"),
                         const SizedBox(height: 15),
@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                         CustomTextButton(
                           text: "Don't have an account?",
                           onPressed: () {
-                            Navigator.pushNamed(context, "/register");
+                            Navigator.pushNamed(context, "/home");
                           },
                           btn_1: "Sign up",
                         )
