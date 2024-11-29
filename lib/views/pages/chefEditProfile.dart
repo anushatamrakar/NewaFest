@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:newafest/views/pages/editProfile.dart';
 
 class ChefEditProfilePage extends StatefulWidget {
-  const ChefEditProfilePage({Key? key}) : super(key: key);
+  const ChefEditProfilePage({super.key});
 
   @override
-  _ChefEditProfilePageState createState() => _ChefEditProfilePageState();
+  State<ChefEditProfilePage> createState() => _ChefEditProfilePageState();
 }
 
 class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
@@ -25,71 +26,71 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
           const Center(
             child: Column(
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('kiki.jpg'),
+                  backgroundImage: AssetImage('assets/kiki.jpg'),
                 ),
-                const SizedBox(height: 10),
-                const Text(
+                SizedBox(height: 10),
+                Text(
                   "Krisha Maharjan",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Poppins', // Added Poppins font
                   ),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 20),
-          // Message and Follow buttons
+          // Add recipe and edit profile buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Message button
               ElevatedButton.icon(
                 onPressed: () {
-                  // Handle message button action
                   print("Add recipe button pressed");
                 },
                 icon: const Icon(Icons.add),
                 label: const Text("Add recipe"),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  backgroundColor: const Color(0xff701714),
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(color: Colors.red),
                   ),
                 ),
               ),
               const SizedBox(width: 15),
-              // Follow/Unfollow button
               ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                  });
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const EditProfile()),
+                  );
                 },
-                child: const Text("Edit Profile"),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  backgroundColor: const Color(0xff701714),
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(color: Colors.red),
                   ),
                 ),
+                child: const Text("Edit Profile"),
               ),
             ],
           ),
           const SizedBox(height: 20),
-          // Tabs
+          // Tabs with spacing
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildTab("ABOUT", 0),
+              const SizedBox(width: 35),
               _buildTab("RECIPES", 1),
+              const SizedBox(width: 35),
               _buildTab("REVIEWS", 2),
             ],
           ),
@@ -120,7 +121,8 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: _selectedTabIndex == index ? FontWeight.bold : FontWeight.normal,
-                color: _selectedTabIndex == index ? Colors.red : Colors.grey,
+                fontFamily: 'Poppins',
+                color: _selectedTabIndex == index ? const Color(0xff701714) : Colors.grey,
               ),
             ),
             if (_selectedTabIndex == index)
@@ -128,8 +130,8 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
                 margin: const EdgeInsets.only(top: 5),
                 height: 2,
                 width: 30,
-                color: Colors.red,
-              )
+                color: const Color(0xff701714),
+              ),
           ],
         ),
       ),
@@ -145,13 +147,17 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
           child: Text(
             "A dedicated chef with a love for preserving and sharing the rich culinary heritage of Newari cuisine. Specializing in authentic recipes.",
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 14, color: Colors.black54),
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.black54,
+              fontFamily: 'Poppins',
+            ),
           ),
         );
       case 1:
-        return const Center(child: Text("Recipes content coming soon!"));
+        return const Center(child: Text("Recipes content coming soon!", style: TextStyle(fontFamily: 'Poppins')));
       case 2:
-        return const Center(child: Text("Reviews content coming soon!"));
+        return const Center(child: Text("Reviews content coming soon!", style: TextStyle(fontFamily: 'Poppins')));
       default:
         return Container();
     }

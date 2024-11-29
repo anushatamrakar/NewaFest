@@ -140,6 +140,11 @@ class _UserRegistrationState extends State<UserRegistration> {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(right: 28, left: 28),
+                child: CustomButton(txt1: "Sign up",bg: const Color(0xff701714), textColor: Colors.white, onPressed: () {Navigator.pushNamed(context, "/login");  },),
+              ),
+              const SizedBox(height: 15),
               const CustomDivider(divider1: "or Sign up with"),
               const SizedBox(height: 15),
               Row(
@@ -164,7 +169,6 @@ class _UserRegistrationState extends State<UserRegistration> {
               CustomTextButton(text: "Already have an account?", onPressed: (){
                 Navigator.pushNamed(context, "/login");
               }, btn_1: "Login",)
-
             ],
           ),
         ),

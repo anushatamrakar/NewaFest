@@ -3,8 +3,6 @@ import 'package:newafest/widgets/custom_banner.dart';
 import 'package:newafest/widgets/custom_button.dart';
 import 'package:newafest/widgets/custom_divider.dart';
 import '../../widgets/custom_social_icon.dart';
-import '../../widgets/custom_tbutton.dart';
-
 
 class SharerRegistration extends StatefulWidget {
   const SharerRegistration({super.key});
@@ -14,7 +12,7 @@ class SharerRegistration extends StatefulWidget {
 }
 
 class _SharerRegistrationState extends State<SharerRegistration> {
-  final OutlineInputBorder border = const OutlineInputBorder(
+  final border = const OutlineInputBorder(
     borderSide: BorderSide(
       width: 1.5,
       style: BorderStyle.solid,
@@ -69,7 +67,7 @@ class _SharerRegistrationState extends State<SharerRegistration> {
     );
   }
 
-  Widget _email() {
+  Widget email() {
     return TextField(
       style: const TextStyle(
         fontSize: 15,
@@ -92,7 +90,7 @@ class _SharerRegistrationState extends State<SharerRegistration> {
     );
   }
 
-  Widget _password() {
+  Widget password() {
     bool obscureText = true;
 
     return StatefulBuilder(
@@ -134,7 +132,7 @@ class _SharerRegistrationState extends State<SharerRegistration> {
     );
   }
 
-  Widget _experience() {
+  Widget experience() {
     return TextField(
       style: const TextStyle(
         fontSize: 15,
@@ -160,58 +158,70 @@ class _SharerRegistrationState extends State<SharerRegistration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:SafeArea(child: SingleChildScrollView(
-        padding: const EdgeInsets.all(0),
-        child:  Container(
-          width: double.infinity,
-          child: Column(
-            children: [
-              const CustomBanner(text1: "Sign up", text2: "Create your own account"),
-              Padding(
-                padding: const EdgeInsets.all(28),
-                child: Column(
+      resizeToAvoidBottomInset: true,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(0),
+          child: Container(
+            width: double.infinity,
+            child: Column(
+              children: [
+                const CustomBanner(
+                    text1: "Sign up", text2: "Create your own account"),
+                Padding(
+                  padding: const EdgeInsets.all(28),
+                  child: Column(
+                    children: [
+                      name(),
+                      const SizedBox(height: 15),
+                      number(),
+                      const SizedBox(height: 15),
+                      email(),
+                      const SizedBox(height: 15),
+                      password(),
+                      const SizedBox(height: 15),
+                      experience(),
+                    ],
+                  ),
+                ),
+                const CustomDivider(divider1: "or Sign up with"),
+                const SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    name(),
-                    const SizedBox(height: 15),
-                    number(),
-                    const SizedBox(height: 15),
-                    _email(),
-                    const SizedBox(height: 15),
-                    _password(),
-                    const SizedBox(height:15),
-                    _experience(),
+                    CustomOutlinedButton(
+                      icon: const Icon(Icons.facebook),
+                      text: 'Google',
+                      onPressed: () {},
+                      textColor: Colors.black,
+                    ),
+                    const SizedBox(width: 25),
+                    CustomOutlinedButton(
+                      icon: const Icon(Icons.facebook),
+                      text: 'Facebook',
+                      onPressed: () {},
+                      textColor: Colors.blue,
+                    ),
                   ],
                 ),
-              ),
-              const CustomDivider(divider1: "or Sign up with"),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomOutlinedButton(
-                    icon: const Icon(Icons.facebook),
-                    text: 'Google',
-                    onPressed: () {},
-                    textColor: Colors.black,
+                const SizedBox(height: 15),
+                Padding(
+                  padding: const EdgeInsets.only(right: 28, left: 28),
+                  child: CustomButton(txt1: "Sign up",bg: const Color(0xff701714), textColor: Colors.white, onPressed: () {Navigator.pushNamed(context, "/login");  },),
+                ),
+                const Text(
+                  "Already have an account? Login",
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: "Poppins",
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey,
                   ),
-                  const SizedBox(width: 25),
-                  CustomOutlinedButton(
-                    icon: const Icon(Icons.facebook),
-                    text: 'Facebook',
-                    onPressed: () {},
-                    textColor: Colors.blueGrey,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 15),
-              CustomTextButton(text: "Already have an account?", onPressed: (){
-                Navigator.pushNamed(context, "/login");
-              }, btn_1: "Login",)
-
-            ],
-          ),
-        ),
-      )),
+                )
+              ],
+            ),
+          ),),
+      ),
     );
   }
 }

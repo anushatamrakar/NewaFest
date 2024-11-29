@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ChefProfilePage extends StatefulWidget {
-  const ChefProfilePage({Key? key}) : super(key: key);
+  const ChefProfilePage({super.key});
 
   @override
-  _ChefProfilePageState createState() => _ChefProfilePageState();
+  State<ChefProfilePage> createState() => _ChefProfilePageState();
 }
 
 class _ChefProfilePageState extends State<ChefProfilePage> {
@@ -26,47 +26,28 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
           const Center(
             child: Column(
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('kiki.jpg'), // Replace with your image path
+                  backgroundImage: AssetImage('assets/kiki.jpg'),
                 ),
-                const SizedBox(height: 10),
-                const Text(
+                SizedBox(height: 10),
+                Text(
                   "Krisha Maharjan",
-                    style: TextStyle(
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Poppins', // Ensured font consistency
                   ),
                 ),
               ],
             ),
           ),
           const SizedBox(height: 20),
-          // Message and Follow buttons
+          // Message, Follow, and Subscription buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Message button
-              ElevatedButton.icon(
-                onPressed: () {
-                  // Handle message button action
-                  print("Message button pressed");
-                },
-                icon: const Icon(Icons.message),
-                label: const Text("Message"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.red,
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(color: Colors.red),
-
-                  ),
-                ),
-              ),
-              const SizedBox(width: 15),
-              // Follow/Unfollow button
+              // Follow/Unfollow button (Larger than others)
               ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -75,9 +56,47 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
                 },
                 child: Text(isFollowing ? "Unfollow" : "Follow"),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  backgroundColor: const Color(0xff701714),
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10), // Larger padding
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: const BorderSide(color: Colors.red),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 15),
+
+              // Subscription button (Right side)
+              ElevatedButton(
+                onPressed: () {
+                  // Handle subscription button action
+                  print("Subscription button pressed");
+                },
+                child: const Text("Subscribe"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff701714),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: const BorderSide(color: Colors.red),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 15),
+
+              // Message button
+              ElevatedButton(
+                onPressed: () {
+                  // Handle message button action
+                  print("Message button pressed");
+                },
+                child: const Icon(Icons.message),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff701714),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                     side: const BorderSide(color: Colors.red),
@@ -86,17 +105,19 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 30),
           // Tabs
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildTab("ABOUT", 0),
+              const SizedBox(width: 35),
               _buildTab("RECIPES", 1),
+              const SizedBox(width: 35),
               _buildTab("REVIEWS", 2),
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           // Tab content
           Expanded(
             child: _buildTabContent(),
@@ -123,7 +144,8 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: _selectedTabIndex == index ? FontWeight.bold : FontWeight.normal,
-                color: _selectedTabIndex == index ? Colors.red : Colors.grey,
+                fontFamily: 'Poppins',
+                color: _selectedTabIndex == index ? const Color(0xff701714) : Colors.grey,
               ),
             ),
             if (_selectedTabIndex == index)
@@ -131,7 +153,7 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
                 margin: const EdgeInsets.only(top: 5),
                 height: 2,
                 width: 30,
-                color: Colors.red,
+                color: const Color(0xff701714),
               )
           ],
         ),
@@ -148,13 +170,17 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
           child: Text(
             "A dedicated chef with a love for preserving and sharing the rich culinary heritage of Newari cuisine. Specializing in authentic recipes.",
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 14, color: Colors.black54),
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.black54,
+              fontFamily: 'Poppins',
+            ),
           ),
         );
       case 1:
-        return const Center(child: Text("Recipes content coming soon!"));
+        return const Center(child: Text("Recipes content coming soon!", style: TextStyle(fontFamily: 'Poppins')));
       case 2:
-        return const Center(child: Text("Reviews content coming soon!"));
+        return const Center(child: Text("Reviews content coming soon!", style: TextStyle(fontFamily: 'Poppins')));
       default:
         return Container();
     }
