@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newafest/widgets/custom_add_recipe/food_category.dart';
 import 'package:newafest/widgets/custom_add_recipe/image_upload.dart';
+import 'package:newafest/widgets/custom_button.dart';
 
 class AddRecipe extends StatefulWidget {
   const AddRecipe({super.key});
@@ -119,18 +120,19 @@ class _AddRecipeState extends State<AddRecipe> {
                 ),
                 Slider(
                   value: _currentValue,
-                  min: 0, // Minimum value of the slider
-                  max: 60, // Maximum value of the slider
-                  divisions: 6, // Number of steps
-                  label: _currentValue.round().toString(), // Label showing the current value
-                  activeColor: const Color(0xff701714), // Color for the active part of the slider
-                  inactiveColor: Colors.grey, // Color for the inactive part of the slider
+                  min: 0,
+                  max: 60,
+                  divisions: 6,
+                  label: _currentValue.round().toString(),
+                  activeColor: const Color(0xff701714),
+                  inactiveColor: Colors.grey,
                   onChanged: (double newValue) {
                     setState(() {
-                      _currentValue = newValue; // Update the value when the slider is moved
+                      _currentValue = newValue;
                     });
                   },
                 ),
+                CustomButton(txt1: "Continue", bg: const Color(0xff701714), textColor: Colors.white, onPressed: (){Navigator.pushNamed(context, "/add_recipe2");},),
               ],
             ),
           )

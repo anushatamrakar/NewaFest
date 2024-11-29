@@ -39,18 +39,26 @@ class _FoodCategoryState extends State<FoodCategory> {
               CustomCategoryButton(
                   onPressed: () {},
                   icon: const Icon(
-                    Icons.breakfast_dining,
+                    Icons.lunch_dining,
                     size: 18,
                   ),
-                  txt1: "Breakfast"),
+                  txt1: "Lunch"),
               const SizedBox(width: 10),
               CustomCategoryButton(
                   onPressed: () {},
                   icon: const Icon(
-                    Icons.breakfast_dining,
+                    Icons.lunch_dining_outlined,
                     size: 18,
                   ),
-                  txt1: "Breakfast"),
+                  txt1: "Snacks"),
+              const SizedBox(width: 10),
+              CustomCategoryButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.dinner_dining,
+                    size: 18,
+                  ),
+                  txt1: "Dinner"),
             ],
           ),
         )
