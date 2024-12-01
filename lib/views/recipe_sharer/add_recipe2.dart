@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newafest/widgets/custom_button.dart';
-import 'package:newafest/widgets/custom_social_icon.dart';
+
+import '../../widgets/custom_add_recipe/custom_add_button.dart';
 
 class AddRecipe2 extends StatefulWidget {
   const AddRecipe2({super.key});
@@ -67,80 +68,50 @@ class _AddRecipe2State extends State<AddRecipe2> {
     );
   }
 
-  Widget _steps() {
-    return TextField(
-      minLines: 1,
-      maxLines: null,
-      style: const TextStyle(
-        fontSize: 14,
-        fontFamily: "Poppins",
-        fontWeight: FontWeight.w400,
-      ),
-      decoration: InputDecoration(
-        labelText: "First Step",
-        filled: true,
-        fillColor: Colors.white,
-        focusedBorder: border,
-        enabledBorder: border,
-        labelStyle: const TextStyle(
-          color: Colors.grey,
-          fontSize: 14,
-          fontFamily: "Poppins",
-          fontWeight: FontWeight.w400,
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Ingredients",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14,
-                  fontFamily: "Poppins",
-                  color: Colors.black,
+              Expanded(
+                  child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const Text(
+                      "Ingredients",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        fontFamily: "Poppins",
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    _ingredient(),
+                    const SizedBox(height: 15),
+                    _quantity(),
+                    const SizedBox(height: 15),
+                    CustomOutlinedAddButton(
+                        icon: const Icon(Icons.add),
+                        text: "Ingredients",
+                        onPressed: () {}),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 15),
-              _ingredient(),
-              const SizedBox(height: 15),
-              _quantity(),
-              const SizedBox(height: 15),
-              CustomOutlinedButton(
-                  icon: const Icon(Icons.add),
-                  text: "Ingredients",
-                  onPressed: () {}),
-              const SizedBox(height: 15),
-              const Text(
-                "Steps",
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14,
-                  fontFamily: "Poppins",
-                  color: Colors.black,
-                ),
-              ),
-              const SizedBox(height: 15),
-              _steps(),
-              const SizedBox(height: 15),
-              CustomOutlinedButton(
-                  icon: const Icon(Icons.add), text: "Steps", onPressed: () {}),
+              )),
               CustomButton(
-                  txt1: "Save",
-                  bg: const Color(0xff701714),
-                  textColor: Colors.white,
-                  onPressed: () {},
-                ),
-                ],
+                txt1: "Continue",
+                bg: const Color(0xff701714),
+                textColor: Colors.white,
+                onPressed: () {
+                  Navigator.pushNamed(context, "/add_recipe3");
+                },
+              ),
+            ],
           ),
         ),
       ),

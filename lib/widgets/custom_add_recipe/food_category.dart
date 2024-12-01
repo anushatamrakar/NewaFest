@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:newafest/widgets/custom_add_recipe/category_widget.dart';
-import 'package:newafest/widgets/custom_social_icon.dart';
 
 class FoodCategory extends StatefulWidget {
   const FoodCategory({super.key});
@@ -24,6 +23,7 @@ class _FoodCategoryState extends State<FoodCategory> {
             color: Colors.black,
           ),
         ),
+        const SizedBox(height: 10),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -35,7 +35,7 @@ class _FoodCategoryState extends State<FoodCategory> {
                     size: 18,
                   ),
                   txt1: "Breakfast"),
-              const SizedBox(width: 10),
+              const SizedBox(width: 6),
               CustomCategoryButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -43,7 +43,7 @@ class _FoodCategoryState extends State<FoodCategory> {
                     size: 18,
                   ),
                   txt1: "Lunch"),
-              const SizedBox(width: 10),
+              const SizedBox(width: 6),
               CustomCategoryButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -51,7 +51,7 @@ class _FoodCategoryState extends State<FoodCategory> {
                     size: 18,
                   ),
                   txt1: "Snacks"),
-              const SizedBox(width: 10),
+              const SizedBox(width: 6),
               CustomCategoryButton(
                   onPressed: () {},
                   icon: const Icon(
