@@ -7,6 +7,7 @@ import 'package:newafest/views/home/opening_page.dart';
 import 'package:newafest/views/pages/chefEditProfile.dart';
 import 'package:newafest/views/pages/chefProfile.dart';
 import 'package:newafest/views/pages/editProfile.dart';
+import 'package:newafest/views/pages/generalEditProfile.dart';
 
 void main() {
   runApp(const MyApp());
