@@ -219,18 +219,6 @@ class _GeneraleditprofileState extends State<Generaleditprofile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Edit Profile",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-            fontFamily: "Poppins",
-          ),
-        ),
-        backgroundColor: const Color(0xff701714),
-        centerTitle: true,
-      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(28),
         child: Column(

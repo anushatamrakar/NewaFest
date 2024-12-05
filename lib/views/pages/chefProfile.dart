@@ -14,12 +14,6 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
-        actions: const [Icon(Icons.more_vert)],
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
       body: Column(
         children: [
           // Profile picture and name

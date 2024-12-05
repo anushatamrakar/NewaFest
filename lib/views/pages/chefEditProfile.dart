@@ -14,12 +14,6 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
-        actions: const [Icon(Icons.more_vert)],
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
       body: Column(
         children: [
           // Profile picture and name
@@ -44,7 +38,7 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
           ),
           const SizedBox(height: 10),
 
-          // Followers, Following, Subscribers Section
+          // Followers and Subscribers Section
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -55,7 +49,7 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
           ),
           const SizedBox(height: 20),
 
-          // Add recipe and edit profile buttons
+          //recipe and edit profile buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -96,7 +90,6 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
           ),
           const SizedBox(height: 20),
 
-          // Tabs with spacing
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
