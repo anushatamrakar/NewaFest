@@ -42,12 +42,24 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
               ],
             ),
           ),
+          const SizedBox(height: 10),
+
+          // Followers, Following, Subscribers Section
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildProfileStat("Followers", "1.2K"),
+              _divider(),
+              _buildProfileStat("Subscribers", "800"),
+            ],
+          ),
           const SizedBox(height: 20),
+
           // Message, Follow, and Subscription buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Follow/Unfollow button (Larger than others)
+              // Follow/Unfollow button
               ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -67,7 +79,7 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
               ),
               const SizedBox(width: 15),
 
-              // Subscription button (Right side)
+              // Subscription button
               ElevatedButton(
                 onPressed: () {
                   // Handle subscription button action
@@ -106,6 +118,7 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
             ],
           ),
           const SizedBox(height: 30),
+
           // Tabs
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -118,11 +131,46 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
             ],
           ),
           const SizedBox(height: 5),
+
           // Tab content
           Expanded(
             child: _buildTabContent(),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildProfileStat(String label, String count) {
+    return Column(
+      children: [
+        Text(
+          count,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Poppins',
+          ),
+        ),
+        const SizedBox(height: 5),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 14,
+            color: Colors.grey,
+            fontFamily: 'Poppins',
+          ),
+        ),
+      ],
+    );
+  }
+  // Divider between stats
+  Widget _divider() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: VerticalDivider(
+        thickness: 1,
+        color: Colors.grey,
       ),
     );
   }

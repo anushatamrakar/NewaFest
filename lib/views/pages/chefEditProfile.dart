@@ -36,33 +36,29 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins', // Added Poppins font
+                    fontFamily: 'Poppins',
                   ),
                 ),
               ],
             ),
           ),
+          const SizedBox(height: 10),
+
+          // Followers, Following, Subscribers Section
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildProfileStat("Followers", "1.2K"),
+              _divider(),
+              _buildProfileStat("Subscribers", "800"),
+            ],
+          ),
           const SizedBox(height: 20),
+
           // Add recipe and edit profile buttons
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton.icon(
-                onPressed: () {
-                  print("Add recipe button pressed");
-                },
-                icon: const Icon(Icons.add),
-                label: const Text("Add recipe"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff701714),
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 5),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-              ),
-              const SizedBox(width: 15),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -73,16 +69,33 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xff701714),
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
                 child: const Text("Edit Profile"),
               ),
+              const SizedBox(width: 15),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/login");
+                },
+                icon: const Icon(Icons.logout),
+                label: const Text("Logout"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff701714),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 20),
+
           // Tabs with spacing
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -95,6 +108,7 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
             ],
           ),
           const SizedBox(height: 10),
+
           // Tab content
           Expanded(
             child: _buildTabContent(),
@@ -161,5 +175,41 @@ class _ChefEditProfilePageState extends State<ChefEditProfilePage> {
       default:
         return Container();
     }
+  }
+
+  // Helper method to build profile stats
+  Widget _buildProfileStat(String label, String count) {
+    return Column(
+      children: [
+        Text(
+          count,
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Poppins',
+          ),
+        ),
+        const SizedBox(height: 5),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 14,
+            color: Colors.grey,
+            fontFamily: 'Poppins',
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Divider between stats
+  Widget _divider() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: VerticalDivider(
+        thickness: 1,
+        color: Colors.grey,
+      ),
+    );
   }
 }

@@ -134,6 +134,29 @@ class _EditProfileState extends State<EditProfile> {
     );
   }
 
+  Widget experienceField() {
+    return TextField(
+      style: const TextStyle(
+        fontSize: 15,
+        fontFamily: "Poppins",
+        fontWeight: FontWeight.w400,
+      ),
+      decoration: InputDecoration(
+        labelText: "Experience",
+        filled: true,
+        fillColor: Colors.white,
+        focusedBorder: border,
+        enabledBorder: border,
+        labelStyle: const TextStyle(
+          color: Colors.grey,
+          fontSize: 15,
+          fontFamily: "Poppins",
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    );
+  }
+
   Widget emailField() {
     return TextField(
       style: const TextStyle(
@@ -239,6 +262,23 @@ class _EditProfileState extends State<EditProfile> {
     );
   }
 
+  Widget logoutButton() {
+    return ElevatedButton(
+      onPressed: () {
+        print("Logout button pressed");
+      },
+      child: const Text("Logout"),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xff701714),
+        foregroundColor: Colors.white,
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -266,6 +306,8 @@ class _EditProfileState extends State<EditProfile> {
             const SizedBox(height: 15),
             aboutField(),
             const SizedBox(height: 15),
+            experienceField(),
+            const SizedBox(height: 15),
             emailField(),
             const SizedBox(height: 15),
             phoneNumberField(),
@@ -273,6 +315,8 @@ class _EditProfileState extends State<EditProfile> {
             passwordField(),
             const SizedBox(height: 25),
             saveButton(),
+            const SizedBox(height: 25),
+            logoutButton(),
           ],
         ),
       ),
