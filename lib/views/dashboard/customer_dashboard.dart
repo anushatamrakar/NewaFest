@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:newafest/widgets/custom_tbutton.dart';
 
 class CustomerDashboard extends StatefulWidget {
   const CustomerDashboard({super.key});
@@ -28,7 +27,7 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
       ),
       decoration: InputDecoration(
         hintText: "Search recipes...",
-        hintStyle: TextStyle(color: Colors.grey),
+        hintStyle: const TextStyle(color: Colors.grey),
         prefixIcon: const Icon(Icons.search_outlined),
         filled: true,
         fillColor: Colors.white,
@@ -153,10 +152,10 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
                         height: 230,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: 10,
+                          itemCount: 5,
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 10.0), // Uniform gap
+                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
                               child: _popularRecipeCard(),
                             );
                           },
@@ -194,28 +193,130 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
                           ),
                         ],
                       ),
-                      // const SizedBox(height: 10),
                       const Row(
                         children: [
                           Column(
                             children: [
                               CircleAvatar(
                                 foregroundImage: AssetImage("assets/applogo.png"),
-                                maxRadius: 40,
+                                maxRadius: 35,
                               ),
-                              Text(
-                                "Anusha Tamrakar",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  fontFamily: "Poppins",
-                                  color: Colors.black,
+                              SizedBox(
+                                width: 70,
+                                child: Text(
+                                  "Anusha Tamrakar",
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(width:15),
+                          Column(
+                            children: [
+                              CircleAvatar(
+                                foregroundImage: AssetImage("assets/applogo.png"),
+                                maxRadius: 35,
+                              ),
+                              SizedBox(
+                                width: 70,
+                                child: Text(
+                                  "Anusha Tamrakar",
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(width:15),
+                          Column(
+                            children: [
+                              CircleAvatar(
+                                foregroundImage: AssetImage("assets/applogo.png"),
+                                maxRadius: 35,
+                              ),
+                              SizedBox(
+                                width: 70,
+                                child: Text(
+                                  "Anusha Tamrakar",
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(width:15),
+                          Column(
+                            children: [
+                              CircleAvatar(
+                                foregroundImage: AssetImage("assets/applogo.png"),
+                                maxRadius: 35,
+                              ),
+                              SizedBox(
+                                width: 70,
+                                child: Text(
+                                  "Anusha Tamrakar",
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                             ],
                           )
                         ],
-                      )
+                      ),
+                      const SizedBox(height:15),
+                      const Column(
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                foregroundImage: AssetImage("assets/applogo.png"),
+                                maxRadius: 20,
+                              ),
+                              const SizedBox(width: 10),
+                              const Text(
+                                "anushatamrakar",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                  fontFamily: "Poppins",
+                                  color: Colors.black,
+                                ),
+                              ),
+                             SizedBox(width:5),
+                             Icon(Icons.add, size: 16, color: Colors.black54),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Column(
+                            children:[
+                              Image(
+                                image: AssetImage('assets/applogo.png'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "565425662719",
+    "project_id": "newa-fest-app",
+    "storage_bucket": "newa-fest-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565425662719:android:483f23f3d529ac41f67aca",
+        "android_client_info": {
+          "package_name": "com.example.newafest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzznLEnkWsyWegT_TUCNS9wLCwPsw9JpY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

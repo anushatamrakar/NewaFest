@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:newafest/widgets/custom_add_recipe/category_widget.dart';
 
 class FoodCategory extends StatefulWidget {
-  const FoodCategory({super.key});
+  final VoidCallback onPressed;
+  const FoodCategory({super.key, required this.onPressed});
 
   @override
   State<FoodCategory> createState() => _FoodCategoryState();
