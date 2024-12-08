@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routes: {
-          "/": (context)=> const OpeningPage(),
+          "/": (context)=> const ForgotPasswordPage(),
           "/wrapper": (context)=> const Wrapper(),
           "/popular": (context)=> const BottomNav(ind: 1),
           "/add_recipe": (context)=> const BottomNav(ind: 2),

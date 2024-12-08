@@ -5,7 +5,6 @@ import 'package:newafest/validator/validation.dart';
 import 'package:newafest/widgets/custom_banner.dart';
 import 'package:newafest/widgets/custom_button.dart';
 import 'package:newafest/widgets/custom_tbutton.dart';
-
 import '../../widgets/custom_divider.dart';
 import '../../widgets/custom_social_icon.dart';
 

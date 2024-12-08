@@ -13,11 +13,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF701714),
+      backgroundColor: const Color(0xFF701714), // Background color
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -28,16 +28,16 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       'assets/whitebglogo.jpeg',
                       width: double.infinity,
                       height: 250,
+                      fit: BoxFit.cover,
                     ),
-                    const SizedBox(),
                   ],
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 20),
                 const Text(
                   "Forgot",
                   style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700,
                     fontFamily: "Poppins",
                     color: Colors.white,
                   ),
@@ -45,13 +45,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 const Text(
                   "Password?",
                   style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 32,
+                    fontWeight: FontWeight.w400,
                     fontFamily: "Poppins",
                     color: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 20),
+                // Subtitle
                 const Text(
                   "Find your account",
                   style: TextStyle(
@@ -73,6 +74,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     hintStyle: const TextStyle(
                       fontFamily: "Poppins",
                       color: Colors.grey,
+                      fontSize: 14,
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 14,
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -96,15 +102,14 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Implement your recovery logic here
-                      print("Email entered: ${_emailController.text}");
+                      // Add logic for password recovery
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                     ),
                     child: const Text(
                       "Recover Password",
@@ -124,11 +129,4 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       ),
     );
   }
-}
-
-void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: ForgotPasswordPage(),
-  ));
 }
