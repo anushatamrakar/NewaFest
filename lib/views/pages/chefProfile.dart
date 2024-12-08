@@ -90,25 +90,6 @@ class _ChefProfilePageState extends State<ChefProfilePage> {
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
-
-              // Message button
-              ElevatedButton(
-                onPressed: () {
-                  // Handle message button action
-                  print("Message button pressed");
-                },
-                child: const Icon(Icons.message),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff701714),
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(color: Colors.red),
-                  ),
-                ),
-              ),
             ],
           ),
           const SizedBox(height: 30),

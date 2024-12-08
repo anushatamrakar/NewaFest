@@ -27,13 +27,15 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        "/": (context)=> const ChefProfilePage(),
+        "/": (context)=> const OpeningPage(),
         "/home": (context)=> const HomePage(),
         "/login":(context)=> const LoginPage(),
         "/register":(context)=> const UserRegistration(),
         "/sharer_register":(context)=> const SharerRegistration(),
-        '/editprofile': (context) => const EditProfile(),
-
+        "/editprofile": (context) => const EditProfile(),
+        "/chefeditprofile":(context)=> const ChefEditProfilePage(),
+        "/chefprofile":(context)=> const ChefProfilePage(),
+        "/generaleditprofile":(context)=> const Generaleditprofile()
       },
     );
   }
