@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:newafest/views/navigate_pages/chef_calender.dart';
+import 'package:newafest/views/recipe_sharer/chef_popular_chef.dart';
 import 'package:newafest/views/recipe_sharer/chef_profile.dart';
 import 'package:newafest/views/dashboard/sharer_dashboard.dart';
 import 'package:newafest/views/navigate_pages/calendar.dart';
@@ -25,10 +27,10 @@ class _BottomNavState extends State<BottomNav> {
 
   final List<Widget> screenList = [
     const SharerDashboard(),
-    const PopularChef(),
+    const ChefPopularChef(),
     const AddRecipe(),
-    const Calendar(),
-    const MyAccount(),
+    const ChefCalendar(),
+    const ChefProfilePage(),
   ];
 
   @override

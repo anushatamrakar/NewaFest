@@ -20,7 +20,18 @@ class RecipeService {
         throw Exception('All fields must be filled.');
       }
 
-      // Add recipe to Firestore
+      // Check if the recipe already exists using foodName or sharerId
+      final existingRecipe = await FirebaseFirestore.instance
+          .collection('recipes')
+          .where('foodName', isEqualTo: foodName)
+          .where('sharerId', isEqualTo: sharerId)
+          .get();
+
+      if (existingRecipe.docs.isNotEmpty) {
+        throw Exception('This recipe already exists.');
+      }
+
+      // Add the new recipe to Firestore
       await FirebaseFirestore.instance.collection('recipes').add({
         'coverPhoto': coverPhoto,
         'category': category,
@@ -33,18 +44,61 @@ class RecipeService {
         'members': members ?? {},   // Optional members
       });
 
-      // Show success message
+      // Display success message
       DisplayMessage.displayMessage(
         context,
         "Recipe added successfully!",
         AlertType.success,
       );
     } catch (e) {
-      // Handle and display errors
       print("Error in addRecipe: $e");
       DisplayMessage.displayMessage(
         context,
         "Failed to add Recipe: ${e.toString()}",
+        AlertType.error,
+      );
+    }
+  }
+  Future<void> updateCustomerProfile(
+      BuildContext context, String customerId, Map<String, dynamic> updates) async {
+    try {
+      DocumentReference customerDocRef =
+      FirebaseFirestore.instance.collection('customer').doc(customerId);
+      await customerDocRef.update(updates);
+
+      // Show success alert
+      DisplayMessage.displayMessage(
+        context,
+        "Customer profile updated successfully!",
+        AlertType.success,
+      );
+    } catch (e) {
+      // Handle and display error alert
+      DisplayMessage.displayMessage(
+        context,
+        "Error updating customer profile: ${e.toString()}",
+        AlertType.error,
+      );
+    }
+  }
+  Future<void> updateChefProfile(
+      BuildContext context, String customerId, Map<String, dynamic> updates) async {
+    try {
+      DocumentReference customerDocRef =
+      FirebaseFirestore.instance.collection('sharer').doc(customerId);
+      await customerDocRef.update(updates);
+
+      // Show success alert
+      DisplayMessage.displayMessage(
+        context,
+        "Customer profile updated successfully!",
+        AlertType.success,
+      );
+    } catch (e) {
+      // Handle and display error alert
+      DisplayMessage.displayMessage(
+        context,
+        "Error updating customer profile: ${e.toString()}",
         AlertType.error,
       );
     }

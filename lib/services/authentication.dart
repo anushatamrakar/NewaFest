@@ -143,10 +143,24 @@ class Authentication {
     }
   }
 
-  Future<void> signOut() async {
-    await _auth.signOut();
-    print("User signed out successfully.");
+  Future<void> signOut(BuildContext context) async {
+    try {
+      await _auth.signOut();
+      Navigator.pushReplacementNamed(context, '/login');
+      DisplayMessage.displayMessage(
+        context,
+        "Log out successfull!!",
+        AlertType.success,
+      );
+    } catch (e) {
+      DisplayMessage.displayMessage(
+        context,
+        "Error during logout: ${e.toString()}",
+        AlertType.error,
+      );
+    }
   }
+
 
   Future passwordReset(BuildContext context, email) async {
     try {
@@ -160,28 +174,6 @@ class Authentication {
       DisplayMessage.displayMessage(
         context,
         "Email doesnot exist",
-        AlertType.error,
-      );
-    }
-  }
-
-  Future<void> updateCustomerImage(BuildContext context, String customerId,
-      String imageUrl) async {
-    try {
-      DocumentReference userDocRef = FirebaseFirestore.instance.collection(
-          'customers').doc(customerId);
-      await userDocRef.update({
-        'image': imageUrl,
-      });
-      DisplayMessage.displayMessage(
-        context,
-        "customer image updated successfully!",
-        AlertType.success,
-      );
-    } catch (e) {
-      DisplayMessage.displayMessage(
-        context,
-        "Error updating customer image: ${e.toString()}",
         AlertType.error,
       );
     }

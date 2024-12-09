@@ -130,18 +130,21 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           const SizedBox(height: 15),
-                          const Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Text(
-                                "Forgot Password?",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: "Poppins",
-                                  color: Colors.grey,
+                              GestureDetector(
+                                onTap: (){Navigator.pushReplacementNamed(context, '/forget_pw');},
+                                child: const Text(
+                                  "Forgot Password?",
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily: "Poppins",
+                                    color: Colors.grey,
+                                  ),
                                 ),
-                              ),
+                              )
                             ],
                           ),
                           const SizedBox(height: 15),

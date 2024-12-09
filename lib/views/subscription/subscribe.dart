@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:newafest/widgets/custom_button.dart';
 
 class Subscribe extends StatefulWidget {
-  const Subscribe({super.key});
+  final String route;
+  const Subscribe({super.key, required this.route});
 
   @override
   State<Subscribe> createState() => _SubscribeState();
@@ -22,6 +23,15 @@ class _SubscribeState extends State<Subscribe> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Row(
+                  children: [
+                  GestureDetector(
+                    onTap:(){
+                      Navigator.pushReplacementNamed(context, widget.route);
+                    },
+                    child: const Icon(Icons.arrow_back_ios,color: Colors.white,),
+                  )
+                ],),
                 Container(
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,

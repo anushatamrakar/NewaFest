@@ -194,13 +194,14 @@ class _SharerRegistrationState extends State<SharerRegistration> {
       decoration: InputDecoration(
         labelText: "Experience",
         filled: true,
+        suffixText: 'yrs',
         fillColor: Colors.white,
         focusedBorder: border,
         enabledBorder: border,
         labelStyle: const TextStyle(
           color: Colors.grey,
           fontSize: 15,
-          fontFamily: "Poppins",
+          fontFamily: "poppins",
           fontWeight: FontWeight.w400,
         ),
       ),

@@ -9,6 +9,8 @@ import 'package:newafest/views/auth/login_page.dart';
 import 'package:newafest/views/auth/sharer_registration.dart';
 import 'package:newafest/views/auth/user_registration.dart';
 import 'package:newafest/views/bottom_navigation/bottom_nav.dart';
+import 'package:newafest/views/bottom_navigation/customer_bottom_nav.dart';
+import 'package:newafest/views/navigate_pages/calendar.dart';
 import 'package:newafest/views/recipe_sharer/chef_profile.dart';
 import 'package:newafest/views/dashboard/customer_dashboard.dart';
 import 'package:newafest/views/dashboard/sharer_dashboard.dart';
@@ -17,6 +19,7 @@ import 'package:newafest/views/home/opening_page.dart';
 import 'package:newafest/views/recipe_sharer/add_recipe.dart';
 import 'package:newafest/views/recipe_sharer/add_recipe2.dart';
 import 'package:newafest/views/recipe_sharer/add_recipe3.dart';
+import 'package:newafest/views/recipe_sharer/general_edit_profile.dart';
 import 'package:newafest/views/subscription/subscribe.dart';
 import 'package:newafest/views/view_recipe/view_recipe.dart';
 import 'package:newafest/wrapper.dart';
@@ -47,13 +50,25 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routes: {
-          "/": (context)=> const ForgotPasswordPage(),
+          "/": (context)=> const OpeningPage(),
           "/wrapper": (context)=> const Wrapper(),
+          "/chef_dash": (context)=> const BottomNav(ind: 0),
           "/popular": (context)=> const BottomNav(ind: 1),
           "/add_recipe": (context)=> const BottomNav(ind: 2),
           "/calender": (context)=> const BottomNav(ind: 3),
           "/chef_profile": (context)=> const BottomNav(ind: 4),
+
+
+
+          "/cust_dash": (context)=> const CustomerBottomNav(ind: 0),
+          "/cust_popular": (context)=> const CustomerBottomNav(ind: 1),
+          "/cust_calender": (context)=> const CustomerBottomNav(ind: 2),
+          "/my_profile": (context)=> const CustomerBottomNav(ind: 3),
+
+
           "/home": (context)=> const HomePage(),
+          "/forget_pw": (context)=> const ForgotPasswordPage(),
+
           "/login":(context)=> const LoginPage(),
           "/register":(context)=> const UserRegistration(),
           "/sharer_register":(context)=> const SharerRegistration(),

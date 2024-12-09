@@ -3,6 +3,7 @@ import 'package:newafest/views/dashboard/customer_dashboard.dart';
 import 'package:newafest/views/navigate_pages/calendar.dart';
 import 'package:newafest/views/navigate_pages/my_account.dart';
 import 'package:newafest/views/navigate_pages/popular_chef.dart';
+import 'package:newafest/views/recipe_sharer/chef_popular_chef.dart';
 
 class CustomerBottomNav extends StatefulWidget {
   final int ind;
@@ -22,7 +23,7 @@ class _CustomerBottomNavState extends State<CustomerBottomNav> {
 
   final List<Widget> screenList = [
     const CustomerDashboard(),
-    const PopularChef(),
+    const ChefPopularChef(),
     const Calendar(),
     const MyAccount(),
   ];

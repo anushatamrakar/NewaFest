@@ -5,16 +5,17 @@ import 'package:flutter/material.dart';
 import 'package:newafest/controller/chef_controller.dart';
 import 'package:newafest/utility/loader.dart';
 import 'package:newafest/views/navigate_pages/customer_chef_profile.dart';
+import 'package:newafest/widgets/custom_add_recipe/custom_chef_header.dart';
 import 'package:newafest/widgets/custom_app_header.dart';
 
-class PopularChef extends StatefulWidget {
-  const PopularChef({super.key});
+class ChefPopularChef extends StatefulWidget {
+  const ChefPopularChef({super.key});
 
   @override
-  State<PopularChef> createState() => _PopularChefState();
+  State<ChefPopularChef> createState() => _ChefPopularChefState();
 }
 
-class _PopularChefState extends State<PopularChef> {
+class _ChefPopularChefState extends State<ChefPopularChef> {
   final OutlineInputBorder border = const OutlineInputBorder(
     borderSide: BorderSide(
       width: 1.5,
@@ -95,7 +96,7 @@ class _PopularChefState extends State<PopularChef> {
         child: Container(
           child: Column(
             children: [
-              const CustomAppHeader(title: 'Popular Chef'),
+              const CustomChefHeader(title: 'Popular Chef'),
               Padding(
                 padding:
                 const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -134,7 +135,7 @@ class _PopularChefState extends State<PopularChef> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ChefCustomerProfilePage( route: '/cust_dash', uid:  chef['id'],),
+                            builder: (context) => ChefCustomerProfilePage( route: '/chef_dash', uid:  chef['id'],),
                           ),
                         );
                       },

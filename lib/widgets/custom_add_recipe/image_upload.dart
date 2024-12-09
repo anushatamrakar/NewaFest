@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 class ImageUpload extends StatefulWidget {
-  const ImageUpload({super.key});
+  final VoidCallback onTap;
+  const ImageUpload({super.key, required this.onTap});
 
   @override
   State<ImageUpload> createState() => _ImageUploadState();
@@ -10,9 +11,7 @@ class _ImageUploadState extends State<ImageUpload> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        // Add image upload functionality here
-      },
+      onTap: widget.onTap,
       child: Container(
         width: double.infinity,
         height: 150,

@@ -16,9 +16,6 @@ allprojects {
         mavenCentral()
     }
 }
-
-// Make sure that you have the following two repositories
-google()  // Google's Maven repository
 rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"

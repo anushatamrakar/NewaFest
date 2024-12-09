@@ -1,16 +1,17 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:newafest/widgets/custom_add_recipe/custom_chef_header.dart';
 import 'package:newafest/widgets/custom_app_header.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-class Calendar extends StatefulWidget {
-  const Calendar({super.key});
+class ChefCalendar extends StatefulWidget {
+  const ChefCalendar({super.key});
 
   @override
-  State<Calendar> createState() => _CalendarState();
+  State<ChefCalendar> createState() => _ChefCalendarState();
 }
 
-class _CalendarState extends State<Calendar> {
+class _ChefCalendarState extends State<ChefCalendar> {
   Map<DateTime, List<dynamic>> events = {};
   DateTime _selectedDay = DateTime.now();
   DateTime _focusedDay = DateTime.now();
@@ -69,7 +70,7 @@ class _CalendarState extends State<Calendar> {
 
       body: Column(
         children: [
-          const CustomAppHeader(title: 'Newari Calendar'),
+          const CustomChefHeader(title: 'Newari Calendar'),
           TableCalendar(
             firstDay: DateTime(2024, 1, 1),
             lastDay: DateTime(2024, 12, 31),
