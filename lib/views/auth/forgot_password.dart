@@ -71,9 +71,6 @@ String email='';
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
-
-                      // Subtitle
                       const Text(
                         "Find your account",
                         style: TextStyle(
